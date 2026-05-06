@@ -9,11 +9,11 @@ app.use(express.json());
 
 // 🔗 DB CONNECTION
 const db = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "testuser",
-  password: "1234",
-  database: "collegeeventdb",
-  port: 3306
+  host: process.env.MYSQLHOST,
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
+  port: process.env.MYSQLPORT
 });
 
 db.connect((err) => {
